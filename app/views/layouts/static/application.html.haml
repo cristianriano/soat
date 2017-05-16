@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    = render 'layouts/headers'
+
+    = include_gon
+
+    = stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'static', 'data-turbolinks-track': 'reload'
+  %body
+    #main_container.site-wrapper
+      #inner_wrapper.site-wrapper-inner
+        .cover-container
+          = render 'layouts/static/navbar'
+          = yield
+          = render 'layouts/static/footer'

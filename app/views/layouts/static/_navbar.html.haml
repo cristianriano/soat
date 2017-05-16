@@ -1,0 +1,17 @@
+.masthead.navbar-fixed-top
+  .inner
+    %a{href: "#{root_path}"}
+      %h3.masthead-brand SOAT
+    %nav
+      %ul.nav.masthead-nav
+        %li{class: "#{@active == 'home' ? 'active' : 'inactive'}"}
+          %a{href: "#{root_path}"} Inicio
+        %li{class: "#{@active == 'about' ? 'active' : 'inactive'}"}
+          %a{href: "#{about_path}"} Sobre Nosotros
+        %li{class: "#{@active == 'contact' ? 'active' : 'inactive'}"}
+          %a{href: "#{contact_path}"} Contactenos
+        %li
+          %a{href: "#"} Registrarse
+        %li
+          %a{href: "#"} Login
+      %ul.nav.maste-right

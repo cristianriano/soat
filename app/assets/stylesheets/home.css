@@ -1,0 +1,8 @@
+/*
+ * This will only include bootstrap to make lighter the home sections pages
+ *
+ *= require_self
+ *= require bootstrap_and_overrides
+ *= require fontawesome
+ *= require_tree ./static
+ */
