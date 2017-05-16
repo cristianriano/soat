@@ -40,5 +40,11 @@ group :development do
 end
 
 group :test do
+  gem 'capybara', '~> 2.14'
+  gem 'database_cleaner', '~> 1.6'
+  gem 'factory_girl_rails', '~> 4.8'
   gem "faker", '~> 1.7.3'
+  gem 'poltergeist', '~> 1.15'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', '~> 0.14'
 end
