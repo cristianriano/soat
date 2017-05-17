@@ -5,13 +5,13 @@
     %nav
       %ul.nav.masthead-nav
         %li{class: "#{@active == 'home' ? 'active' : 'inactive'}"}
-          %a{href: "#{root_path}"} Inicio
+          %a{href: "#{root_path}"}= t('home.navbar.home')
         %li{class: "#{@active == 'about' ? 'active' : 'inactive'}"}
-          %a{href: "#{about_path}"} Sobre Nosotros
+          %a{href: "#{about_path}"}= t('home.navbar.about')
         %li{class: "#{@active == 'contact' ? 'active' : 'inactive'}"}
-          %a{href: "#{contact_path}"} Contactenos
+          %a{href: "#{contact_path}"}= t('home.navbar.contact')
         %li{class: "#{@active == 'register' ? 'active' : 'inactive'}"}
-          %a{href: "#{new_user_registration_path}"} Registrarse
+          %a{href: "#{new_user_registration_path}"}= t('home.navbar.signup')
         %li{class: "#{@active == 'login' ? 'active' : 'inactive'}"}
-          %a{href: "#{new_user_session_path}"} Login
+          %a{href: "#{new_user_session_path}"}= t('home.navbar.login')
       %ul.nav.maste-right

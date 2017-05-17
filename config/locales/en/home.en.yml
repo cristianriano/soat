@@ -1,0 +1,14 @@
+
+en:
+  home:
+    navbar:
+      home: "Home"
+      about: "About us"
+      contact: "Contact us"
+      signup: "Signup"
+      login: "Login"
+    footer:
+      terms: "Terms and conditions"
+    titles:
+      contact: "Contact"
+      about: "About"
