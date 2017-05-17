@@ -1,6 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
   layout 'static/application', only: [:new]
 
+  def new
+    super
+    @active = 'register'
+  end
+
   private
 
   def sign_up_params
