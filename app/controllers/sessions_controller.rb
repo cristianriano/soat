@@ -2,8 +2,8 @@ class SessionsController < Devise::SessionsController
   layout 'static/application', only: [:new]
 
   def new
-    super
     @active = 'login'
+    super
   end
 
   private
