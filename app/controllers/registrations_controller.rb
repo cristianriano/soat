@@ -1,7 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout 'static/application', only: [:new]
+  layout 'static/application', only: [:new, :create]
 
   def new
+    @active = 'register'
+    super
+  end
+
+  def create
     @active = 'register'
     super
   end
