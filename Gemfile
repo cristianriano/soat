@@ -15,6 +15,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem "pundit"
 gem 'redis', '~> 3.0'
+gem 'routing-filter', '~> 0.6'
 gem 'sass-rails', '~> 5.0'
 # gem 'searchkick'
 gem 'simple_form', '~> 3.4.0'
