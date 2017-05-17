@@ -1,0 +1,7 @@
+
+es:
+  mailers:
+    confirmation:
+      welcome: "Bienvenido"
+      message: "Confirma tu email pulsando en el siguiente link:"
+      link: "Confirmar mi cuenta"

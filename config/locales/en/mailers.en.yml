@@ -1,0 +1,7 @@
+
+en:
+  mailers:
+    confirmation:
+      welcome: "Welcome"
+      message: "You can confirm your account email through the link below:"
+      link: "Confirm my account"

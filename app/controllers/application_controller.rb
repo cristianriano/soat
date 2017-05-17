@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def default_url_options(opts = {})
     { locale: I18n.locale }.merge(opts)
   end
+
+  def logged_in?
+    current_user != nil
+  end
 end
