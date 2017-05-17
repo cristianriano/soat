@@ -1,0 +1,14 @@
+
+en:
+  dashboard:
+    navbar:
+      buy: "Buy"
+      insurances: "Insurances"
+      profile: "Profile"
+      logout: "Logout"
+    sidebar:
+      dashboard: "Dashboard"
+      sell: "SOATs Selled"
+      buy: "Buy SOAT"
+      shopping: "My Shoppings"
+      profile: "Profile"

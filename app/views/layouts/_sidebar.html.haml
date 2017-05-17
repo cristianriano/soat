@@ -1,14 +1,14 @@
 #sidebar
   %ul.nav.nav-sidebar
     %li{class: "#{@active == 'dashboard' ? 'active' : 'inactive'}"}
-      %a{href: "#"} Resumen
+      = link_to t('dashboard.sidebar.dashboard'), dashboard_path
     %li
-      %a{href: ""} Vendidos
+      = link_to t('dashboard.sidebar.sell'), '#'
   %ul.nav.nav-sidebar
     %li
-      %a{href: ""} Comprar Soat
+      = link_to t('dashboard.sidebar.buy'), '#'
     %li
-      %a{href: ""} Mis Compras
+      = link_to t('dashboard.sidebar.shopping'), '#'
     %ul.nav.nav-sidebar
     %li
-      %a{href: ""} Perfil
+      = link_to t('dashboard.sidebar.profile'), edit_user_registration_path

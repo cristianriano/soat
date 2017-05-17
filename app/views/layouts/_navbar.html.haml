@@ -11,12 +11,12 @@
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{href: "#"} Dashboard
+          = link_to t('dashboard.navbar.buy'), '#'
         %li
-          %a{href: "#"} Settings
+          = link_to t('dashboard.navbar.insurances'), '#'
         %li
-          %a{href: "#"} Profile
+          = link_to t('dashboard.navbar.profile'), edit_user_registration_path
         %li
-          %a{href: "#"} Help
-      %form.navbar-form.navbar-right
-        %input.form-control{placeholder: "Search...", type: "text"}
+          = link_to t('dashboard.navbar.logout'), destroy_user_session_path, method: :delete
+      -# %form.navbar-form.navbar-right
+      -#   %input.form-control{placeholder: "Search...", type: "text"}
