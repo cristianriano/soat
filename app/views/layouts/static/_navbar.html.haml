@@ -11,7 +11,7 @@
         %li{class: "#{@active == 'contact' ? 'active' : 'inactive'}"}
           %a{href: "#{contact_path}"} Contactenos
         %li
-          %a{href: "#"} Registrarse
+          %a{href: "#{new_user_registration_path}"} Registrarse
         %li
-          %a{href: "#"} Login
+          %a{href: "#{new_user_session_path}"} Login
       %ul.nav.maste-right
