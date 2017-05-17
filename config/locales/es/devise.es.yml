@@ -1,5 +1,10 @@
 es:
   devise:
+    shared:
+      login: "Ya tienes cuenta? Ingresa aqui"
+      signup: "No tienes cuenta? Registrate"
+      forgot: "Olvidaste tu contraseña?"
+      confirmation: "No recibiste correo de confirmación?"
     confirmations:
       confirmed: "Tu cuenta ya ha sido confirmada. Has sido indentificado."
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo reestablecer tu contraseña."

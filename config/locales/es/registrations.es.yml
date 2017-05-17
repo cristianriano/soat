@@ -1,0 +1,6 @@
+
+es:
+  registrations:
+    new:
+      title: "Registro"
+      submit: "Crear cuenta"

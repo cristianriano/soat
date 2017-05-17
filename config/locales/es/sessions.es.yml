@@ -1,0 +1,6 @@
+
+es:
+  sessions:
+    new:
+      title: "Ingresar"
+      submit: "Ingresar"
