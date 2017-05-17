@@ -4,3 +4,4 @@ en:
     new:
       title: "Signup"
       submit: "Create account"
+      password_hint: "%{minimum_password_length} characters minimum"

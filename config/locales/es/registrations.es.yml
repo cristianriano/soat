@@ -4,3 +4,4 @@ es:
     new:
       title: "Registro"
       submit: "Crear cuenta"
+      password_hint: "%{minimum_password_length} caracteres minimo"

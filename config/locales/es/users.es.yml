@@ -6,3 +6,23 @@ es:
         email: "Email"
         password: "Password"
         remember_me: "Recordarme"
+
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              invalid: "El password es invalido"
+            email:
+              invalid: "Introduzca un email valido"
+              taken: "El email ya esta en uso"
+              blank: "El email es obligatorio"
+            current_password:
+              too_short: "El password debe tener al menos 6 caracteres"
+            password:
+              current_password: "Password actual"
+              confirmation: "Verificar password"
+              too_short: "El password debe tener al menos 6 caracteres"
+              blank: "El password es obligatorio"
+            password_confirmation:
+              confirmation: "Los passwords no coinciden"

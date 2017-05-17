@@ -6,3 +6,21 @@ en:
         email: "Email"
         password: "Password"
         remember_me: "Remember me"
+
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              invalid: The password is invalid
+            email:
+              invalid: Please enter a valid Email
+              taken: Email has already been taken
+              blank: Email is required
+            current_password:
+              too_short: Password must be at least 6 characters
+            password:
+              current_password: Current password
+              confirmation: Verify password
+              too_short: Password must be at least 6 characters
+              blank: Password is required
