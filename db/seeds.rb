@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+coverage = Coverage.instance
+coverage.death = 750
+coverage.medical = 800
+coverage.inability = 180
+coverage.transport = 10
+coverage.currency = "SMLDV"
+coverage.save

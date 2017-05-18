@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 gem 'rails', '~> 5.0.3'
 
-
+gem 'acts_as_singleton', '~> 0.0.8'
 gem 'coffee-rails', '~> 4.2'
 gem "devise", '~> 4.2.1'
 gem 'dotenv-rails', '~> 2.2.0'
