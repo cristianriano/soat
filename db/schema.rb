@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518043025) do
+ActiveRecord::Schema.define(version: 20170518044157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170518043025) do
     t.float  "inability"
     t.float  "transport"
     t.string "currency"
+  end
+
+  create_table "rates", force: :cascade do |t|
+    t.string  "code",                     null: false
+    t.string  "category",                 null: false
+    t.string  "subcategory",              null: false
+    t.integer "min_age",     default: 0,  null: false
+    t.integer "max_age",     default: 99, null: false
+    t.float   "bonus",                    null: false
+    t.float   "total",                    null: false
   end
 
   create_table "users", force: :cascade do |t|
