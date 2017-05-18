@@ -1,7 +1,9 @@
 class Rate < ApplicationRecord
+  # Constants
   FOSYGA_RATE = 0.5
   RUNT_RATE = 1610
 
+  # Methods
   def fosyga
     FOSYGA_RATE * bonus
   end

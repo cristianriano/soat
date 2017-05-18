@@ -6,6 +6,8 @@ class CreateCoverages < ActiveRecord::Migration[5.0]
       t.float :inability
       t.float :transport
       t.string :currency
+
+      t.timestamps null: false
     end
   end
 end

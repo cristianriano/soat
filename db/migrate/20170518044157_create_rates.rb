@@ -13,6 +13,8 @@ class CreateRates < ActiveRecord::Migration[5.0]
       # t.float :runt, null: false
 
       t.float :total, null: false
+
+      t.timestamps null: false
     end
   end
 end
