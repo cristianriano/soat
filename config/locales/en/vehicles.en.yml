@@ -1,0 +1,32 @@
+en:
+  activerecord:
+    attributes:
+      vehicle:
+        license: "Placa"
+        category: "Clase"
+        subcategory: "Subtipo"
+        age: "Edad"
+        value_type: "Tipo de valor"
+        value: "Valor"
+
+    errors:
+      models:
+        vehicle:
+          attributes:
+            license:
+              blank: "La placa es obligatoria"
+            category:
+              blank: "La clase es obligatoria"
+              inclusion: "Elija una de las categorias validas (%{allowed_options})"
+            subcategory:
+              blank: "El subtipo es obligatorio"
+              inclusion: "Elija una de las categorias validas (%{allowed_options})"
+            age:
+              blank: "La edad es obligatoria"
+            value_type:
+              inclusion: "Elija una de las categorias validas (%{allowed_options})"
+
+  vehicles:
+    new:
+      age_hint: "Solo numeros enteros"
+      submit: "Registrar"

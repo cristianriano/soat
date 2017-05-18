@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   get 'about'         => 'pages#about', as: :about
 
   resource :dashboard,      only: [:show]
+  resources :insurances, except: [:destroy, :edit, :update]
+  resources :vehicles, except: [:destroy, :edit, :update] do
+    collection do
+      match 'search', via: [:get, :post]
+    end
+  end
 end

@@ -1,0 +1,10 @@
+- provide(:title, t('insurances.new.title'))
+
+%h1.page-header= t('insurances.new.header')
+.row
+  .col-md-6.col-md-offset-3.col-xs-10.col-xs-offset-1
+    %h4= t('insurances.new.vehicle.header')
+    #vehicle_form
+      = render partial: "vehicles/new_form"
+
+%h3.sub-header= "#{t('registrations.edit.cancel.title')}"

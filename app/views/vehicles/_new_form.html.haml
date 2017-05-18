@@ -1,0 +1,10 @@
+/ form id = new_vehicle
+= simple_form_for(@vehicle, url: search_vehicles_path, remote: true, html: { method: :post }) do |f|
+  = f.error_notification
+  = f.input :license, required: true, autofocus: true, input_html: { onChange: "search_vehicle_by_license(event)" }
+  = f.input :category, collection: Vehicle::CATEGORIES, include_blank: false
+  = f.input :subcategory, collection: @subcategories
+  = f.input :age, hint: t('vehicles.new.age_hint'), as: :integer, input_html: { min: '0', step: 'any' }
+  = f.input :value_type, as: :hidden
+  = f.input :value, as: :integer, input_html: { min: '0', step: 'any' }
+  = f.button :submit, t('vehicles.new.submit'), class: "btn btn-primary"

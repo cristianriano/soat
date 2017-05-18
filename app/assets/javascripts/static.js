@@ -6,9 +6,10 @@
 //= require jquery
 //= require jquery-ujs
 //= require turbolinks
-//= require_self
 //= require bootstrap
 //= require twitter/bootstrap
+//= require_self
+//= require common
 
 // This function change the navbar color when scroll down and surpas a limit (70)
 // It also add a transtiion when coloring the navbar to soft the change

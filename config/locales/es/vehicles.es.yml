@@ -25,3 +25,8 @@ es:
               blank: "La edad es obligatoria"
             value_type:
               inclusion: "Elija una de las categorias validas (%{allowed_options})"
+
+  vehicles:
+    new:
+      age_hint: "Solo numeros enteros"
+      submit: "Registrar"

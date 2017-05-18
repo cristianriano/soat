@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require twitter/bootstrap
+//= require common
 //= require_tree ./admin
 //= require_self

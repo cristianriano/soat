@@ -1,0 +1,18 @@
+
+es:
+  activerecord:
+    attributes:
+      vehicle:
+        license: "Placa"
+        category: "Clase"
+        subcategory: "Subtipo"
+        age: "Edad"
+        value_type: "Tipo de valor"
+        value: "Valor"
+
+  insurances:
+    new:
+      title: "Nuevo SOAT"
+      header: "Adquirir SOAT"
+      vehicle:
+        header: "Datos del Vehiculo"

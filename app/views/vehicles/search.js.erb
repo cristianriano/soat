@@ -1,0 +1,3 @@
+<% unless @vehicle.nil? %>
+  $('#active-shortlists-table-container').html("<%= j render partial: 'vehicles/new_form' %>")
+<% end %>
