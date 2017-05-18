@@ -14,6 +14,7 @@ class CreateVehicles < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
 
+    add_index :vehicles, :license, unique: true
     add_reference :vehicles, :user, foreign_key: true, index: true
     add_reference :vehicles, :rate, foreign_key: true, index: true
   end

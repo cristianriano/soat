@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518150534) do
+ActiveRecord::Schema.define(version: 20170518185752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20170518150534) do
     t.string   "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "insurances", force: :cascade do |t|
+    t.datetime "starts_at",  null: false
+    t.datetime "ends_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "vehicle_id"
+    t.integer  "rates_id"
+    t.index ["rates_id"], name: "index_insurances_on_rates_id", using: :btree
+    t.index ["vehicle_id"], name: "index_insurances_on_vehicle_id", using: :btree
   end
 
   create_table "rates", force: :cascade do |t|
@@ -76,10 +87,13 @@ ActiveRecord::Schema.define(version: 20170518150534) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "rate_id"
+    t.index ["license"], name: "index_vehicles_on_license", unique: true, using: :btree
     t.index ["rate_id"], name: "index_vehicles_on_rate_id", using: :btree
     t.index ["user_id"], name: "index_vehicles_on_user_id", using: :btree
   end
 
+  add_foreign_key "insurances", "rates", column: "rates_id"
+  add_foreign_key "insurances", "vehicles"
   add_foreign_key "vehicles", "rates"
   add_foreign_key "vehicles", "users"
 end
