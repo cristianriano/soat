@@ -5,3 +5,13 @@ en:
       title: "Signup"
       submit: "Create account"
       password_hint: "%{minimum_password_length} characters minimum"
+    edit:
+      title: "My Profile"
+      waiting_confirmation: "Currently waiting confirmation for:"
+      password_hint: "leave it blank if you don't want to change it"
+      current_password_hint: "we need your current password to confirm your changes"
+      submit: "Update"
+      cancel:
+        title: "Cancel my account"
+        message: "Unhappy?"
+        link: "Click here to cancel"

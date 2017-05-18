@@ -2,13 +2,13 @@
   %ul.nav.nav-sidebar
     %li{class: "#{@active == 'dashboard' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.dashboard'), dashboard_path
-    %li
+    %li{class: "#{@active == 'sells' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.sell'), '#'
   %ul.nav.nav-sidebar
-    %li
+    %li{class: "#{@active == 'buy' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.buy'), '#'
-    %li
+    %li{class: "#{@active == 'shoppings' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.shopping'), '#'
     %ul.nav.nav-sidebar
-    %li
+    %li{class: "#{@active == 'profile' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.profile'), edit_user_registration_path

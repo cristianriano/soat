@@ -1,0 +1,18 @@
+- provide(:title, t('registrations.edit.title'))
+
+%h1.page-header= t('registrations.edit.title')
+.row
+  .col-md-6.col-md-offset-3.col-xs-10.col-xs-offset-1
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = f.error_notification
+      = f.input :email, required: true, autofocus: true
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %p= "#{t('registrations.edit.waiting_confirmation')} #{resource.unconfirmed_email}"
+      = f.input :password, autocomplete: "off", hint: t('registrations.edit.password_hint'), required: false
+      = f.input :password_confirmation, required: false
+      = f.input :current_password, hint: t('registrations.edit.current_password_hint'), required: true
+      = f.button :submit, t('registrations.edit.submit'), class: "btn btn-primary"
+
+%h3.sub-header= "#{t('registrations.edit.cancel.title')}"
+%p= t('registrations.edit.cancel.message')
+%p= link_to t('registrations.edit.cancel.link'), registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete

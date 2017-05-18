@@ -5,3 +5,13 @@ es:
       title: "Registro"
       submit: "Crear cuenta"
       password_hint: "%{minimum_password_length} caracteres minimo"
+    edit:
+      title: "Mi Perfil"
+      waiting_confirmation: "Esperando confirmación de:"
+      password_hint: "Deja en blanco si no deseas cambiarlo"
+      current_password_hint: "Necesitamos tu password para realizar los cambios"
+      submit: "Actualizar"
+      cancel:
+        title: "Cancelar mi cuenta"
+        message: "Insatisfecho?"
+        link: "Click aqui para cancelar"

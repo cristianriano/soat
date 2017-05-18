@@ -11,6 +11,16 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def edit
+    @active = 'profile'
+    super
+  end
+
+  def update
+    @active = 'profile'
+    super
+  end
+
   private
 
   def sign_up_params
