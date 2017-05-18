@@ -4,7 +4,10 @@
 .row
   .col-md-6.col-md-offset-3.col-xs-10.col-xs-offset-1
     %h4= t('insurances.new.vehicle.header')
-    #vehicle_form
-      = render partial: "vehicles/new_form"
+    #vehicle_forms
+      #search_vehicle_form_container
+        = render partial: "vehicles/search_form"
+      #new_vehicle_form_container
+        = render partial: "vehicles/new_form"
 
 %h3.sub-header= "#{t('registrations.edit.cancel.title')}"

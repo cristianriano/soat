@@ -12,7 +12,7 @@ class Vehicle < ApplicationRecord
     "SERVICIO PUBLICO INTERMUNICIPAL"=>["Menor de 10 pasajeros", "10 ó mas pasajeros"],
     "OFICIALES ESPECIALES"=>["Menos de 1500 cc", "1500 a 2500 cc", "Más de 2500 cc"]}
 
-  VALUE_TYPES = ["Número de pasajeros", "Cilindraje", "Toneladas"]
+  VALUE_TYPES = ["Número de pasajeros", "Cilindraje", "Toneladas", ""]
 
   # Associations
   belongs_to :user
@@ -27,4 +27,12 @@ class Vehicle < ApplicationRecord
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :value_type, presence: false, inclusion: { in: VALUE_TYPES }
   validates :value, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  # Hooks
+  before_save :upcase_license
+
+  # Methods
+  def upcase_license
+    license.upcase!
+  end
 end

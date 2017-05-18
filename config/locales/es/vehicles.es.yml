@@ -17,16 +17,18 @@ es:
               blank: "La placa es obligatoria"
             category:
               blank: "La clase es obligatoria"
-              inclusion: "Elija una de las categorias validas (%{allowed_options})"
+              inclusion: "Elija una de las categorias validas"
             subcategory:
               blank: "El subtipo es obligatorio"
-              inclusion: "Elija una de las categorias validas (%{allowed_options})"
+              inclusion: "Elija una de las categorias validas"
             age:
               blank: "La edad es obligatoria"
             value_type:
-              inclusion: "Elija una de las categorias validas (%{allowed_options})"
+              inclusion: "Elija una de las categorias validas"
 
   vehicles:
     new:
       age_hint: "Solo numeros enteros"
       submit: "Registrar"
+    search:
+      found: "Se encontro el vehiculo en nuestra base de datos"

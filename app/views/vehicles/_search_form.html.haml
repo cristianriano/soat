@@ -1,0 +1,3 @@
+/ form id = new_vehicle
+= simple_form_for(@vehicle, url: search_vehicles_path, remote: true, html: { method: :post, id: 'search_vehicle_form' }) do |f|
+  = f.input :license, required: true, autofocus: true, input_html: { onChange: "search_vehicle_by_license(event)" }

@@ -1,3 +1,8 @@
-<% unless @vehicle.nil? %>
-  $('#active-shortlists-table-container').html("<%= j render partial: 'vehicles/new_form' %>")
+<% if @vehicle.nil? %>
+  $('#new_vehicle input[type="submit"]').prop('disabled', false);
+<% else %>
+  $('#alerts').html("<div class='alert alert-success' role='alert' style='margin-top: 30px'><%= I18n.t('vehicles.search.found') %></div>");
+  $('#new_vehicle_form_container').html("<%= j render partial: 'vehicles/new_form' %>")
+  $('#new_vehicle input[type="submit"]').prop('disabled', true);
+  $('#vehicle_license_hidden').val("<%= @vehicle.license %>")
 <% end %>
