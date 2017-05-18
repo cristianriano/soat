@@ -6,6 +6,10 @@ en:
         email: "Email"
         password: "Password"
         remember_me: "Remember me"
+        name: "Name"
+        lastname: "Lastname"
+        document: "Document"
+        document_type: "Document Type"
 
     errors:
       models:
@@ -24,3 +28,13 @@ en:
               confirmation: Verify password
               too_short: Password must be at least 6 characters
               blank: Password is required
+            name:
+              blank: "Name is required"
+            last_name:
+              blank: "Lastname is required"
+            document:
+              blank: "Document is required"
+              too_short: "Must be at least 6 characters"
+              invalid: "Must contain only numbers"
+            document_type:
+              blank: "Document type is required"

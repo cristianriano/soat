@@ -37,6 +37,9 @@ body {
 div.flash_messages{
   margin-top: 85px;
 }
+.main-row{
+  margin-top: 70px;
+}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -162,5 +165,11 @@ div.flash_messages{
   .mastfoot,
   .cover-container {
     /*width: 700px;*/
+  }
+}
+
+@media (max-width: 640px){
+  .main-row{
+    margin-top: 180px;
   }
 }

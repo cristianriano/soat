@@ -5,7 +5,12 @@ es:
       user:
         email: "Email"
         password: "Password"
+        password_confirmation: "Confirmacion del Password"
         remember_me: "Recordarme"
+        name: "Nombre"
+        lastname: "Apellido"
+        document: "Documento"
+        document_type: "Tipo de documento"
 
     errors:
       models:
@@ -26,3 +31,13 @@ es:
               blank: "El password es obligatorio"
             password_confirmation:
               confirmation: "Los passwords no coinciden"
+            name:
+              blank: "El nombre es obligatorio"
+            lastname:
+              blank: "El apellido es obligatorio"
+            document:
+              blank: "El documento es obligatorio"
+              too_short: "Debe contener al menos 6 caracteres"
+              invalid: "Debe contener solo numeros"
+            document_type:
+              blank: "El tipo de documento es obligatorio"
