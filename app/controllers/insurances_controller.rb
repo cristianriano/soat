@@ -1,6 +1,5 @@
 class InsurancesController < ApplicationController
   def new
-    binding.pry
     @active = 'buy'
     @vehicle = Vehicle.new
     @subcategories = Vehicle::SUBCATEGORIES

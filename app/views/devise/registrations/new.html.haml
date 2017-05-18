@@ -9,6 +9,7 @@
       = f.input :lastname, required: true
       = f.input :document_type, required: true, collection: User::DOCUMENT_TYPES
       = f.input :document, required: true
+      = f.input :phone
       = f.input :email, required: true
       = f.input :password, required: true, hint: (t('registrations.new.password_hint', minimum_password_length: @minimum_password_length) if @minimum_password_length)
       = f.input :password_confirmation, required: true

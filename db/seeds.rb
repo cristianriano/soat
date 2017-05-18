@@ -7,6 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #
+# Admin user
+#
+if User.where(admin: true).count.zero?
+  User.create!(
+    email: "admin@email.com",
+    password: "password",
+    confirmed_at: DateTime.now,
+    document: "12345678",
+    document_type: "Cedula",
+    name: "Admin",
+    lastname: "Adminson",
+    admin: true
+  )
+end
+
+#
 # Insurance Coverage
 #
 coverage = Coverage.instance
