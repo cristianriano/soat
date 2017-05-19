@@ -205,6 +205,8 @@ GEM
     puma (3.8.2)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    rabl (0.13.1)
+      activesupport (>= 2.3.14)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -346,6 +348,7 @@ DEPENDENCIES
   poltergeist (~> 1.15)
   puma (~> 3.0)
   pundit (~> 1.1)
+  rabl (~> 0.13)
   rails (~> 5.0.3)
   rails-assets-fontawesome!
   rails-assets-jquery!

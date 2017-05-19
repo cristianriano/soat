@@ -19,4 +19,15 @@ Rails.application.routes.draw do
       match 'search', via: [:get, :post]
     end
   end
+
+
+  ##
+  # API Routes
+  ##
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :insurances
+    end
+  end
 end
