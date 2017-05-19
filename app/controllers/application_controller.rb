@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
+  include Pundit
   rescue_from ActiveRecord::RecordNotUnique, with: :record_in_use
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from Pundit::NotAuthorizedError, with: :not_authorized
 
   protect_from_forgery with: :exception
   before_action :set_locale
@@ -26,6 +28,11 @@ class ApplicationController < ActionController::Base
 
   def record_not_found
     flash[:danger] = "Lo sentimos. No se encontro la información que estas buscando"
+    redirect_to :back
+  end
+
+  def not_authorized
+    flash[:danger] = "No cuentas con los permisos suficientes"
     redirect_to :back
   end
 end

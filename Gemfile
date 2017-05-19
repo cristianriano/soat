@@ -13,7 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'less-rails', '~> 2.8'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-gem "pundit"
+gem "pundit", '~> 1.1'
 gem 'redis', '~> 3.0'
 gem 'routing-filter', '~> 0.6'
 gem 'sass-rails', '~> 5.0'
