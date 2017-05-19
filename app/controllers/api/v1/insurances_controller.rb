@@ -1,7 +1,7 @@
 class Api::V1::InsurancesController < Api::BaseController
 
   def index
-
+    @insurances = Insurance.includes(:vehicle).includes(:rate).all 
   end
 
   def show

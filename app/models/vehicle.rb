@@ -59,4 +59,8 @@ class Vehicle < ApplicationRecord
   def full_value
     "#{value} #{value_type}"
   end
+
+  def insuranced?
+    insurances.any? && insurances.first.ends_at > DateTime.now
+  end
 end
