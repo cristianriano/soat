@@ -4,10 +4,17 @@
 .row
   .col-md-6.col-md-offset-3.col-xs-10.col-xs-offset-1
     #vehicle_section
-      %h4= t('insurances.new.vehicle.header')
+      %h3= t('insurances.new.vehicle.header')
+      %b= t('insurances.new.vehicle.message')
       #search_vehicle_form_container
         = render partial: "vehicles/search_form"
       #new_vehicle_form_container
         = render partial: "vehicles/new_form"
 
-%h3.sub-header= "#{t('registrations.edit.cancel.title')}"
+    #insurance_section
+      %h3= t('insurances.new.subheader')
+      %p#insurance_state_message{style: "display: none"}
+      = simple_form_for(@insurance, url: insurances_path, html: { method: :post }) do |f|
+        = f.input :vehicle_id, as: :hidden
+        = f.button :submit, t('insurances.new.submit'), class: "btn btn-primary", disabled: true, id: 'new_insurance_submit'
+        %b#insurance_end_message{style: "display: none"}

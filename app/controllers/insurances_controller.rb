@@ -5,13 +5,15 @@ class InsurancesController < ApplicationController
   def new
     @active = 'buy'
     @vehicle = Vehicle.new
+    @insurance = Insurance.new
+    # Preselected values
     @category = Vehicle::CATEGORIES.first
     @subcategories = Vehicle::SUBCATEGORIES_HASH[@category]
     @value_type = Vehicle::VALUE_TYPES_HASH[@category]
-    @insurance = Insurance.new
   end
 
   def create
+
   end
 
   def index
@@ -23,6 +25,7 @@ class InsurancesController < ApplicationController
   protected
 
   def insurance_params
+    params.require(:insurance).permit(:vehicle_id)
   end
 
   def load_gon

@@ -26,6 +26,7 @@ class Vehicle < ApplicationRecord
   # Associations
   belongs_to :user
   belongs_to :rate
+  has_many :insurances
 
   # Validations
   # Acording to Colombia types of licenses found on: http://andina.com.co/blog/sabes-cuantos-tipos-de-placas-existen-en-colombia/

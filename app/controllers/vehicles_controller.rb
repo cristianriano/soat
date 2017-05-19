@@ -25,7 +25,9 @@ class VehiclesController < ApplicationController
   end
 
   def search
-    @vehicle = Vehicle.where(search_params).first
+    query = Vehicle.where(search_params)
+    query = query.where(user_id: current_user.id) unless current_user.admin?
+    @vehicle = query.includes(:insurances).first
     respond_to do |format|
       format.js
       format.html

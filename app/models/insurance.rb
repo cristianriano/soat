@@ -6,4 +6,7 @@ class Insurance < ApplicationRecord
 
   # Methods
   alias_attribute :bought_at, :created_at
+
+  # Scopes
+  default_scope { order('created_at DESC') }
 end
