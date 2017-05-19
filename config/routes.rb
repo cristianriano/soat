@@ -27,10 +27,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :insurances
-      resources :rates
-      resources :vehicles
-      resources :users
+      resources :insurances, except: [:new, :edit]
+      resources :rates, except: [:new, :edit]
+      resources :vehicles, except: [:new, :edit]
+      resources :users, except: [:new, :edit]
     end
   end
 end
