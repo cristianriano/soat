@@ -9,4 +9,4 @@
   %td= insurance.starts_at.strftime('%d/%m/%y %H:%M')
   %td= insurance.ends_at.strftime('%d/%m/%y %H:%M')
   %td
-    = link_to rate.total, insurance_path(insurance)
+    = link_to number_to_currency(rate.total, delimiter: '.', precision: 0), insurance_path(insurance)

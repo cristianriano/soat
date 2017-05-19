@@ -10,8 +10,9 @@
   %ul.nav.nav-sidebar
     %li{class: "#{@active == 'buy' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.buy'), new_insurance_path
-    %li{class: "#{@active == 'shoppings' ? 'active' : 'inactive'}"}
-      = link_to t('dashboard.sidebar.shopping'), '#'
+    - unless current_user.admin?
+      %li{class: "#{@active == 'bought' ? 'active' : 'inactive'}"}
+        = link_to t('dashboard.sidebar.shopping'), bought_insurances_path
     %ul.nav.nav-sidebar
     %li{class: "#{@active == 'profile' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.profile'), edit_user_registration_path

@@ -1,0 +1,23 @@
+- provide(:title, t('insurances.bought.title'))
+
+- if @insurances.empty?
+  %h1.page-header= t('insurances.bought.none')
+- else
+  %h1.page-header= t('insurances.bought.title')
+  .row
+    .col-xs-12
+      = will_paginate @insurances
+      %b NOTA: Pulse click en el Total para ver los detalles del seguro
+      %table.table.table-striped.table-hover.table-condensed
+        %thead
+          %th Placa
+          %th Codigo
+          %th Categoria
+          %th Nombre
+          %th Comienza
+          %th Termina
+          %th Total
+        %tbody
+          = render @insurances
+
+      = will_paginate @insurances

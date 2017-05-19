@@ -41,6 +41,11 @@ class InsurancesController < ApplicationController
     @rate = @insurance.rate
   end
 
+  def bought
+    @active = 'bought'
+    @insurances = Insurance.joins(:vehicle).includes(:rate).includes(:user).where(vehicles: {user_id: current_user.id}).paginate(page: params[:page])
+  end
+
   protected
 
   def insurance_params

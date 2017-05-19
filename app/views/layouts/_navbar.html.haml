@@ -12,8 +12,9 @@
       %ul.nav.navbar-nav.navbar-right
         %li
           = link_to t('dashboard.navbar.buy'), new_insurance_path
-        %li
-          = link_to t('dashboard.navbar.insurances'), '#'
+        - unless current_user.admin?
+          %li
+            = link_to t('dashboard.navbar.insurances'), bought_insurances_path
         %li
           = link_to t('dashboard.navbar.profile'), edit_user_registration_path
         %li

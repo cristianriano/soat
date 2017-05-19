@@ -30,3 +30,6 @@ es:
         code: "Codigo"
     show:
       header: "Seguro de vehiculo "
+    bought:
+      title: "Mis SOATS"
+      none: "No has comprado ningún seguro"
