@@ -2,6 +2,7 @@ class Api::BaseController < ApplicationController
   rescue_from ActiveModel::UnknownAttributeError, with: :unknown_attribute
   # Avoid CSFR protection for API
   protect_from_forgery with: :null_session
+  http_basic_authenticate_with name: ENV['API_USER'], password: ENV['API_PASSWORD']
 
   protected
 
