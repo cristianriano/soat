@@ -10,7 +10,7 @@ class Api::BaseController < ApplicationController
   end
 
   def record_not_found
-    head :ok
+    head :not_found
   end
 
   def not_authorized

@@ -18,8 +18,7 @@ class InsurancesController < ApplicationController
     @insurance.rate_id = @vehicle.rate_id
     authorize @insurance
     # Set times
-    @insurance.starts_at = @vehicle.next_insurance_start
-    @insurance.ends_at = @insurance.starts_at + 1.year
+    @insurance.calculate_expiration
     if @insurance.save
       flash[:success] = "Felicitaciones! Ha adquirido el seguro SOAT. Ahora se encuentra protegido hasta #{@insurance.ends_at.strftime('%d %b %Y')}"
       redirect_to root_path
