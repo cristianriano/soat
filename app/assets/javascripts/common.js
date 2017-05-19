@@ -15,6 +15,7 @@ set_options_by_category = function(event){
   label = $("div.vehicle_value label")
   value_type = gon.value_types_hash[category];
   label.html(value_type);
+  $('vehicle_value_type').val(label);
 };
 
 // Grab a select tag and fill the options by the ones provided

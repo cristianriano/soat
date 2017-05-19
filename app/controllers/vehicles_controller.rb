@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
-  before_filter :authenticate_user!, except: [:search]
+  before_filter :authenticate_user!
+  before_filter :load_values, only: [:search]
 
   def new
   end
@@ -7,6 +8,7 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user_id = current_user.id
+    @vehicle.subcategory = Vehicle::SUBCATEGORIES_HASH[@vehicle.category][@vehicle.subcategory.to_i]
     if @vehicle.save
       flash[:success] = "Vehiculo registrado"
     else
@@ -44,5 +46,11 @@ class VehiclesController < ApplicationController
   def search_params
     search_params = params.require(:vehicle).permit(:license)
     search_params.each{|k,v| params[k] = v.upcase! }
+  end
+
+  def load_values
+    @category = Vehicle::CATEGORIES.first
+    @subcategories = Vehicle::SUBCATEGORIES_HASH[@category]
+    @value_type = Vehicle::VALUE_TYPES_HASH[@category]
   end
 end

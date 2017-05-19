@@ -17,19 +17,5 @@
   $('#vehicle_license_hidden').val("<%= @vehicle.license %>");
 
   // Insurance form
-  $('#new_insurance_submit').prop('disabled', false);
-  found_message = $('#insurance_state_message');
-  insurance_message = $('#insurance_end_message');
-  found_message.show();
-  insurance_message.show();
-
-  <% if @vehicle.insurances.any? %>
-    <% insurance = @vehicle.insurances.first %>
-    found_message.html("<%= I18n.t('insurances.new.insurance_found') %>"+"<%= insurance.ends_at.strftime('%d %b %Y') %>");
-    ends_date = "<%= (insurance.ends_at + 1.day).strftime('%d %b %Y') %>"
-  <% else %>
-    found_message.html("<%= I18n.t('insurances.new.insurance_not_found') %>");
-    ends_date = "<%= (DateTime.now).strftime('%d %b %Y') %>"
-  <% end %>
-  insurance_message.html("<%= I18n.t('insurances.new.insurance_end_message') %>"+ends_date);
+  <%= render partial: 'vehicles/enable_insurance_form' %>
 <% end %>

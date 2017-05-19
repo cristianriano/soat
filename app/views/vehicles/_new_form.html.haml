@@ -1,5 +1,5 @@
 = simple_form_for(@vehicle, url: vehicles_path, remote: true, html: { method: :post, id: 'new_vehicle' }) do |f|
-  = f.error_notification
+  = render 'shared/error_messages', object: f.object
   = f.input :license, as: :hidden, input_html: {id: 'vehicle_license_hidden'}
   = f.input :category, collection: Vehicle::CATEGORIES, include_blank: false, selected: @category, input_html: { onChange: 'set_options_by_category(event)' }
   = f.input :subcategory, collection: @subcategories, include_blank: false

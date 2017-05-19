@@ -45,4 +45,9 @@ class Vehicle < ApplicationRecord
   def upcase_license
     license.upcase!
   end
+
+  def next_insurance_start
+    return DateTime.now.end_of_day if insurances.empty?
+    insurances.first.ends_at + 1.day
+  end
 end
