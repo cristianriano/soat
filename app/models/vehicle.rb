@@ -55,4 +55,8 @@ class Vehicle < ApplicationRecord
   def set_rate
     self.rate_id = Rate.select(:id).where(category: category, subcategory: subcategory).where("max_age > ? and min_age <=  ?", age, age).first.id
   end
+
+  def full_value
+    "#{value} #{value_type}"
+  end
 end

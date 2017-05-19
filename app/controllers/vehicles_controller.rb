@@ -21,6 +21,8 @@ class VehiclesController < ApplicationController
   end
 
   def index
+    authorize Vehicle
+    @vehicles = Vehicle.includes(:user).includes(:rate).paginate(page: params[:page])
   end
 
   def show

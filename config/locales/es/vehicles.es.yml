@@ -32,3 +32,6 @@ es:
       submit: "Registrar"
     search:
       found: "Se encontro el vehiculo en nuestra base de datos"
+    index:
+      title: "Vehiculos"
+      header: "Vehiculos Registrados"

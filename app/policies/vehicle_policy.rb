@@ -9,4 +9,8 @@ class VehiclePolicy
   def search?
     @user.admin? || @vehicle.user_id == @user.id
   end
+
+  def index?
+    @user.admin?
+  end
 end

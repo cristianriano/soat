@@ -31,7 +31,7 @@ class InsurancesController < ApplicationController
 
   def index
     authorize Insurance
-    @insurances = Insurance.paginate(page: params[:page])
+    @insurances = Insurance.includes(:vehicle).includes(:rate).includes(:user).paginate(page: params[:page])
   end
 
   def show
