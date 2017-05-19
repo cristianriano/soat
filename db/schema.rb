@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20170518185752) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "vehicle_id"
-    t.integer  "rates_id"
-    t.index ["rates_id"], name: "index_insurances_on_rates_id", using: :btree
+    t.integer  "rate_id"
+    t.index ["rate_id"], name: "index_insurances_on_rate_id", using: :btree
     t.index ["vehicle_id"], name: "index_insurances_on_vehicle_id", using: :btree
   end
 
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20170518185752) do
     t.index ["user_id"], name: "index_vehicles_on_user_id", using: :btree
   end
 
-  add_foreign_key "insurances", "rates", column: "rates_id"
+  add_foreign_key "insurances", "rates"
   add_foreign_key "insurances", "vehicles"
   add_foreign_key "vehicles", "rates"
   add_foreign_key "vehicles", "users"

@@ -9,4 +9,12 @@ class InsurancePolicy
   def create?
     @user.admin? || @insurance.user.id == @user.id
   end
+
+  def index?
+    @user.admin?
+  end
+
+  def show?
+    @user.admin? || @insurance.user.id == @user.id
+  end
 end

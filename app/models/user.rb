@@ -15,4 +15,17 @@ class User < ApplicationRecord
   validates :lastname, presence: true
   validates :document, presence: true, format: { with: /\d/ }, length: { minimum: 6 }
   validates :document_type, presence: true, inclusion: { in: DOCUMENT_TYPES }
+
+  # Hooks
+  before_save :upcase_name
+
+  # Methods
+  def full_name
+    "#{lastname} #{name}"
+  end
+
+  def upcase_name
+    name.upcase!
+    lastname.upcase!
+  end
 end

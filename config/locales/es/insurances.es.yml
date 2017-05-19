@@ -22,3 +22,9 @@ es:
       insurance_not_found: "El vehiculo no cuenta con seguro"
       submit: "Comprar"
       insurance_end_message: "Su seguro sera valido por un año y empezara a estar vigente desde "
+    index:
+      title: "SOATS"
+      header: "Seguros Adquiridos"
+      table_headers:
+        license: "Placa"
+        code: "Codigo"

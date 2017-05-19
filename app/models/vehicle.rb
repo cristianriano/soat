@@ -40,6 +40,7 @@ class Vehicle < ApplicationRecord
 
   # Hooks
   before_save :upcase_license
+  before_save :set_rate
 
   # Methods
   def upcase_license
@@ -49,5 +50,9 @@ class Vehicle < ApplicationRecord
   def next_insurance_start
     return DateTime.now.end_of_day if insurances.empty?
     insurances.first.ends_at + 1.day
+  end
+
+  def set_rate
+    self.rate_id = Rate.select(:id).where(category: category, subcategory: subcategory).where("max_age > ? and min_age <=  ?", age, age).first.id
   end
 end

@@ -2,8 +2,11 @@
   %ul.nav.nav-sidebar
     %li{class: "#{@active == 'dashboard' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.dashboard'), dashboard_path
-    %li{class: "#{@active == 'sells' ? 'active' : 'inactive'}"}
-      = link_to t('dashboard.sidebar.sell'), '#'
+    - if current_user.admin?
+      %li{class: "#{@active == 'sells' ? 'active' : 'inactive'}"}
+        = link_to t('dashboard.sidebar.sell'), insurances_path
+      %li{class: "#{@active == 'vehicles' ? 'active' : 'inactive'}"}
+        = link_to t('dashboard.sidebar.vehicles'), vehicles_path
   %ul.nav.nav-sidebar
     %li{class: "#{@active == 'buy' ? 'active' : 'inactive'}"}
       = link_to t('dashboard.sidebar.buy'), new_insurance_path

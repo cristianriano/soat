@@ -8,6 +8,6 @@ class CreateInsurances < ActiveRecord::Migration[5.0]
     end
 
     add_reference :insurances, :vehicle, foreign_key: true, index: true
-    add_reference :insurances, :rates, foreign_key: true, index: true
+    add_reference :insurances, :rate, foreign_key: true, index: true
   end
 end

@@ -4,6 +4,7 @@ ruby '2.4.1'
 gem 'rails', '~> 5.0.3'
 
 gem 'acts_as_singleton', '~> 0.0.8'
+gem 'bootstrap-will_paginate', '0.0.10'
 gem 'coffee-rails', '~> 4.2'
 gem "devise", '~> 4.2.1'
 gem 'dotenv-rails', '~> 2.2.0'
@@ -23,6 +24,7 @@ gem "therubyracer", platforms: :ruby
 gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails', '~> 4.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate', '~> 3.1.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-fontawesome'

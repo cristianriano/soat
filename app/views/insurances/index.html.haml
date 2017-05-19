@@ -1,0 +1,20 @@
+- provide(:title, t('insurances.index.title'))
+
+%h1.page-header= t('insurances.index.header')
+.row
+  .col-xs-12
+    = will_paginate @insurances
+
+    %table.table.table-striped.table-hover.table-condensed
+      %thead
+        %th Placa
+        %th Codigo
+        %th Categoria
+        %th Nombre
+        %th Comienza
+        %th Termina
+        %th Valor
+      %tbody
+        = render @insurances
+
+    = will_paginate @insurances

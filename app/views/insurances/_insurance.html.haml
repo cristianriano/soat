@@ -1,0 +1,11 @@
+%tr
+  - vehicle = insurance.vehicle
+  - user = insurance.user
+  - rate = insurance.rate
+  %td= vehicle.license
+  %td= rate.code
+  %td= vehicle.category
+  %td= user.full_name
+  %td= insurance.starts_at.strftime('%d/%m/%y %H:%M')
+  %td= insurance.ends_at.strftime('%d/%m/%y %H:%M')
+  %td= rate.total

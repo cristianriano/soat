@@ -15,6 +15,7 @@ class InsurancesController < ApplicationController
   def create
     @insurance = Insurance.new(insurance_params)
     @vehicle = Vehicle.find(insurance_params[:vehicle_id])
+    @insurance.rate_id = @vehicle.rate_id
     authorize @insurance
     # Set times
     @insurance.starts_at = @vehicle.next_insurance_start
@@ -29,9 +30,12 @@ class InsurancesController < ApplicationController
   end
 
   def index
+    authorize Insurance
+    @insurances = Insurance.paginate(page: params[:page])
   end
 
   def show
+    authorize @insurance
   end
 
   protected
