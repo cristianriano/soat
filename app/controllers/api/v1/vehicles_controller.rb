@@ -1,8 +1,7 @@
 class Api::V1::VehiclesController < Api::BaseController
 
   def create
-    binding.pry
-    @vehicle = Vechile.new(vehicle_params)
+    @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save
       render status: 201, template: 'api/v1/vehicles/show'
     else
@@ -16,6 +15,16 @@ class Api::V1::VehiclesController < Api::BaseController
 
   def show
     @vehicle = Vehicle.find(params[:id])
+  end
+
+  def update
+    @vehicle = Vehicle.update(params[:id], vehicle_params)
+    render status: 200, template: 'api/v1/vehicles/show'
+  end
+
+  def destroy
+    @vehicle = Vehicle.find(params[:id]).destroy
+    render status: 200, template: 'api/v1/vehicles/show'
   end
 
   private
