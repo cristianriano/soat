@@ -1,0 +1,21 @@
+%table#rates_table.table.table-striped.table-hover.table-condensed.table-bordered
+  %thead
+    %th Código
+    %th Clase
+    %th Subclase
+    %th Edad
+    %th Valor Prima
+    %th Contribución Fosyga
+    %th Tasa Runt
+    %th TOTAL
+  %tbody
+    - Rate.all.each do |rate|
+      %tr
+        %td= rate.code
+        %td= rate.category
+        %td= rate.subcategory
+        %td= rate.age_range
+        %td= number_to_currency(rate.bonus, delimiter: '.', precision: 0)
+        %td= number_to_currency(rate.fosyga, delimiter: '.', precision: 0)
+        %td= number_to_currency(Rate::RUNT_RATE, delimiter: '.', precision: 0)
+        %td= number_to_currency(rate.total, delimiter: '.', precision: 0)

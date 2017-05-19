@@ -10,18 +10,18 @@ class Coverage < ApplicationRecord
 
   # Methods
   def death_coverage
-    "#{number_to_currency(death, delimiter: '.', precision: 0)} #{currency}"
+    "#{death.round(0)} #{currency}"
   end
 
   def medical_coverage
-    "#{number_to_currency(medical, delimiter: '.', precision: 0)} #{currency}"
+    "#{medical.round(0)} #{currency}"
   end
 
   def inability_coverage
-    "#{number_to_currency(inability, delimiter: '.', precision: 0)} #{currency}"
+    "#{inability.round(0)} #{currency}"
   end
 
   def transport_coverage
-    "#{number_to_currency(transport, delimiter: '.', precision: 0)} #{currency}"
+    "#{transport.round(0)} #{currency}"
   end
 end

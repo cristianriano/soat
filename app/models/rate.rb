@@ -15,4 +15,14 @@ class Rate < ApplicationRecord
   def runt
     RUNT_RATE
   end
+
+  def age_range
+    if min_age == 0 && max_age == 99
+      ""
+    elsif max_age == 99
+      "#{min_age} años o más"
+    else
+      "#{min_age} a #{max_age} años"
+    end
+  end
 end
