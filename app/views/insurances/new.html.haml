@@ -3,8 +3,8 @@
 %h1.page-header= t('insurances.new.header')
 .row
   .col-md-6.col-md-offset-3.col-xs-10.col-xs-offset-1
-    %h4= t('insurances.new.vehicle.header')
-    #vehicle_forms
+    #vehicle_section
+      %h4= t('insurances.new.vehicle.header')
       #search_vehicle_form_container
         = render partial: "vehicles/search_form"
       #new_vehicle_form_container
