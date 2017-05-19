@@ -12,3 +12,14 @@ es:
     titles:
       contact: "Contactenos"
       about: "Nosotros"
+  soat:
+    questions:
+      what: "¿Qué es el SOAT?"
+      which: "¿Cuáles son las características principales del seguro?"
+    what: "Es un seguro obligatorio para todos los vehículos (incluye motocicletas) que transiten por el territorio nacional. Ampara los daños corporales que se causen a las personas en accidentes de tránsito. Se incluyen los vehículos extranjeros que circulen por las carreteras del país, y sólo están exentos aquellos vehículos que se movilicen por vías férreas y a la maquinaria agrícola, mientras que no hagan uso de la vía pública"
+    features: "Las características principales del seguro son:"
+    feature_1: "Es un seguro de accidentes personales."
+    feature_2: "Los asegurados son las víctimas potenciales de accidentes de tránsito."
+    feature_3: "Cubre los daños corporales a las personas en accidente de tránsito."
+    feature_4: "Tiene incorporado coberturas en caso de muerte como consecuencia de un accidente de tránsito."
+    feature_5: "Es de cubrimiento universal, es decir, cubre a todas las víctimas que resulten en accidentes de tránsito"

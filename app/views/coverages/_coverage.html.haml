@@ -1,0 +1,4 @@
+%p Las siguientes corresponden a las coberturas ofrecidas por el seguro asi como el monto maximo
+%ul
+  - Coverage::TYPES.each do |type|
+    %li= "#{Coverage::DESCRIPTIONS[type]} #{coverage.send("#{type}_coverage")}"
