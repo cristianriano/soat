@@ -8,4 +8,5 @@
   %td= user.full_name
   %td= insurance.starts_at.strftime('%d/%m/%y %H:%M')
   %td= insurance.ends_at.strftime('%d/%m/%y %H:%M')
-  %td= rate.total
+  %td
+    = link_to rate.total, insurance_path(insurance)

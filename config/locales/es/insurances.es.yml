@@ -28,3 +28,5 @@ es:
       table_headers:
         license: "Placa"
         code: "Codigo"
+    show:
+      header: "Seguro de vehiculo "

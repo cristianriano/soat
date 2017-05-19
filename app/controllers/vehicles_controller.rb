@@ -26,6 +26,10 @@ class VehiclesController < ApplicationController
   end
 
   def show
+    @vehicle = Vehicle.includes(:rate).includes(:user).find(params[:id])
+    authorize @vehicle
+    @user = @vehicle.user
+    @rate = @vehicle.rate
   end
 
   def search

@@ -1,0 +1,24 @@
+- provide(:title, @vehicle.license)
+
+%h1.page-header= "#{t('insurances.show.header')} \"#{@vehicle.license}\""
+.row
+  .col-xs-12
+    %h2.page-header Detalles
+    %b Codigo:
+    %p= @rate.code
+    %b Categoria:
+    %p= @vehicle.category
+    %b Subcategoria:
+    %p= @vehicle.subcategory
+    %b Edad:
+    %p= @vehicle.age
+    %b= "#{@vehicle.value_type}:"
+    %p= @vehicle.value
+    %h2.page-header Tarifa
+    %b Valor Prima
+    %p= number_to_currency(@rate.bonus, delimiter: '.', precision: 0)
+    %b Contribucion Fosyga (50%)
+    %p= number_to_currency(@rate.fosyga, delimiter: '.', precision: 0)
+    %b Tasa Runt
+    %p= number_to_currency(Rate::RUNT_RATE, delimiter: '.', precision: 0)
+    %h4= "TOTAL: #{number_to_currency(@rate.total, delimiter: '.', precision: 0)}"

@@ -1,5 +1,6 @@
 %tr
-  %td= vehicle.license
+  %td
+    = link_to vehicle.license, vehicle_path(vehicle)
   %td= vehicle.rate.code
   %td= vehicle.category
   %td= vehicle.subcategory

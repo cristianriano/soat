@@ -1,0 +1,23 @@
+- provide(:title, @vehicle.license)
+
+%h1.page-header= @vehicle.license
+.row
+  .col-xs-12
+    %b Categoria:
+    %p= @vehicle.category
+    %b Subcategoria:
+    %p= @vehicle.subcategory
+    %b Edad:
+    %p= @vehicle.age
+    %b= "#{@vehicle.value_type}:"
+    %p= @vehicle.value
+    %h2.page-header Responsable
+    %b Nombre Completo
+    %p= @user.full_name
+    %b= @user.document_type
+    %p= @user.document
+    %b Email
+    %p= @user.email
+    - if @user.phone.present?
+      %b Telefono
+      %p= @user.phone

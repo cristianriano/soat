@@ -35,7 +35,10 @@ class InsurancesController < ApplicationController
   end
 
   def show
+    @insurance = Insurance.includes(:vehicle).includes(:rate).find(params[:id])
     authorize @insurance
+    @vehicle = @insurance.vehicle
+    @rate = @insurance.rate
   end
 
   protected
