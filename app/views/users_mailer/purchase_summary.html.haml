@@ -1,0 +1,4 @@
+%h3= "Felicitaciones #{@user.complete_name}!"
+%p= "Usted ha adquirido un SOAT para el vehiculo de placas #{@vehicle.license} por un valor de #{number_to_currency(@rate.total, delimiter: '.', precision: 0)}. Con vigencia desde el #{@insurance.starts_at.strftime('%d/%b/%y')} al #{@insurance.ends_at.strftime('%d/%b/%y')}"
+%p Para más información haz click en el siguiente link:
+%p= link_to "SOAT vehiculo #{@vehicle.license}", insurance_url(@insurance)

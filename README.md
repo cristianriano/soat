@@ -52,6 +52,20 @@ Para correr la aplicación local (development)
         email: admin@email.com
         password: password
 
+## API
+
+Por seguridad, la API cuenta con **HTTP Basic Authentication**. Las credenciales estan definidas en el archivo `.env`.
+
+La version mas actual de la API es **v1** (`/api/v1/`)
+
+## Internacionalización
+
+La aplicación cuenta con soporte para el idioma Ingles. Para ellos solo agrege `/en` luego del dominio.
+
+Por ejemplo: `localhost:3000/en/`
+
+**NOTA: Aún faltan algunas partes por traducir**
+
 ## Ejecutar las pruebas
 
 La aplicación usa `rspec`, `capybara` y el driver `poltergeist`. Para correr todas las pruebas ejecute:
@@ -65,9 +79,3 @@ Para desplegar la aplicación en tu cuenta de Heroku sólo ejecuta los siguiente
 1. `heroku login`
 2. `heroku create`
 3. `git push heroku master`
-
-## API
-
-Por seguridad, la API cuenta con **HTTP Basic Authentication**. Las credenciales estan definidas en el archivo `.env`.
-
-La version mas actual de la API es **v1** (`/api/v1/`)

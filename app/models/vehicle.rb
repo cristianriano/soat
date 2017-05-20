@@ -41,6 +41,7 @@ class Vehicle < ApplicationRecord
   # Hooks
   before_save :upcase_license
   before_save :set_rate
+  before_save :set_value_type
 
   # Methods
   def upcase_license
@@ -54,6 +55,10 @@ class Vehicle < ApplicationRecord
 
   def set_rate
     self.rate_id = Rate.select(:id).where(category: category, subcategory: subcategory).where("max_age >= ? and min_age <=  ?", age, age).first.id
+  end
+
+  def set_value_type
+    self.value_type = VALUE_TYPES_HASH[category]
   end
 
   def full_value

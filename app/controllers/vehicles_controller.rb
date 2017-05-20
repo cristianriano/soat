@@ -34,8 +34,10 @@ class VehiclesController < ApplicationController
     query = Vehicle.where(search_params)
     query = query.where(user_id: current_user.id) unless current_user.admin?
     @vehicle = query.includes(:insurances).first
-    authorize @vehicle unless @vehicle.nil?
-    @rate = @vehicle.rate
+    unless @vehicle.nil?
+      authorize @vehicle
+      @rate = @vehicle.rate
+    end
     respond_to do |format|
       format.js
       format.html

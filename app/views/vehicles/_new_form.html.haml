@@ -4,6 +4,6 @@
   = f.input :category, collection: Vehicle::CATEGORIES, include_blank: false, selected: @category, input_html: { onChange: 'set_options_by_category(event)' }
   = f.input :subcategory, collection: @subcategories, include_blank: false
   = f.input :age, hint: t('vehicles.new.age_hint'), as: :integer, input_html: { min: '0', step: 'any' }
-  = f.input :value_type, as: :hidden, value: @value_type
+  = f.input :value_type, as: :hidden, value: (@vehicle.value_type || @value_type)
   = f.input :value, as: :integer, input_html: { min: '0', step: 'any' }, label: @value_type
   = f.button :submit, t('vehicles.new.submit'), class: "btn btn-primary"

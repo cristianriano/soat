@@ -24,6 +24,10 @@ class User < ApplicationRecord
     "#{lastname} #{name}"
   end
 
+  def complete_name
+    "#{name} #{lastname}"
+  end
+
   def upcase_name
     name.upcase!
     lastname.upcase!

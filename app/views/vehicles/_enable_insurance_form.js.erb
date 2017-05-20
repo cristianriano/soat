@@ -1,6 +1,6 @@
 // Insurance form
 $('#insurance_vehicle_id').val("<%= @vehicle.id %>");
-$('#insurance_license_label').html("<%= @vehicle.license %>");
+$('#insurance_license_label').html("Placa: <%= @vehicle.license %>");
 $('#insurance_fosyga_label').html("<%= price(@rate.fosyga) %>");
 $('#insurance_bonus_label').html("<%= price(@rate.bonus) %>");
 $('#insurance_total_label').html("<%= price(@rate.total) %>");
