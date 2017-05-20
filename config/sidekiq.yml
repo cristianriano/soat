@@ -1,9 +1,6 @@
 ---
+:concurrency: 2
 :timeout: 8
 :queues:
-  - points
-  - answers
   - mailers
-  - gyft
   - default
-  - social_importers
