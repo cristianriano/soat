@@ -19,6 +19,8 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'factory_girl'
+require 'sidekiq/testing'
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -83,11 +85,13 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   # DatabaseCleaner config
-  static_info_tables = %w()
+  static_info_tables = %w(rates coverages)
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation, { except: static_info_tables }
     DatabaseCleaner.clean
+    Sidekiq::Worker.clear_all
+    Rails.application.load_seed # Load seed for static tables
   end
 
   config.before(:each) do
@@ -103,6 +107,7 @@ RSpec.configure do |config|
     end
     DatabaseCleaner.clean
     DatabaseCleaner.start
+    Sidekiq::Worker.clear_all
   end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
