@@ -19,7 +19,7 @@ Para correr la aplicación local (development)
 ### Configuración
 
 1. Ejecutar `bundle install` para instalar las gemas
-2. Copiar el arhivo de configuración .env y configurarlo de acuerdo a tu equipo local (usuario y password para la [API](#API)).
+2. Copiar el arhivo de configuración .env y configurarlo de acuerdo a tu equipo local (usuario y password para la [API](#api)).
 
         cp .env.example .env
 
