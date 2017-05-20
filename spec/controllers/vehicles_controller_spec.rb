@@ -63,9 +63,31 @@ RSpec.describe VehiclesController do
 
   describe "GET /vehicles/:id" do
     it "should show vehicle details to owner" do
-      get :show, { id: vehicle.id }
+      get :show, params: { id: vehicle.id }
       expect(flash[:danger]).to be_nil
       expect(response).to render_template(:show)
+    end
+
+    it "should not show vehicle to other user" do
+      sign_in other_user
+      get :show, params: { id: vehicle.id }
+      expect(flash[:danger]).not_to be_nil
+      expect(response.redirect?).to be true
+    end
+  end
+
+  describe "GET /vehicles" do
+    it "should not show vehicles list to user" do
+      get :index
+      expect(flash[:danger]).not_to be_nil
+      expect(response.redirect?).to be true
+    end
+  end
+
+  describe "POST /vehicles/search" do
+    it "should render js response" do
+      post :search, params: { vehicle: {license: vehicle.license}, format: 'js' }
+      expect(response).to render_template(:search)
     end
   end
 end

@@ -12,7 +12,7 @@ class Vehicle < ApplicationRecord
     "SERVICIO PUBLICO INTERMUNICIPAL"=>["Menor de 10 pasajeros", "10 ó mas pasajeros"],
     "OFICIALES ESPECIALES"=>["Menos de 1500 cc", "1500 a 2500 cc", "Más de 2500 cc"]}
 
-  VALUE_TYPES = ["Número de pasajeros", "Cilindraje", "Toneladas", ""]
+  VALUE_TYPES = ["Pasajeros", "Cilindraje", "Toneladas", ""]
   VALUE_TYPES_HASH = { "CAMPEROS Y CAMIONETAS" => "Cilindraje",
     "BUSES Y BUSETAS DE SERVICIO PUBLICO URBANO"=>"",
     "MOTOS"=>"Cilindraje",
