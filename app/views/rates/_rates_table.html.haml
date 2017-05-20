@@ -15,7 +15,7 @@
         %td= rate.category
         %td= rate.subcategory
         %td= rate.age_range
-        %td= number_to_currency(rate.bonus, delimiter: '.', precision: 0)
-        %td= number_to_currency(rate.fosyga, delimiter: '.', precision: 0)
-        %td= number_to_currency(Rate::RUNT_RATE, delimiter: '.', precision: 0)
-        %td= number_to_currency(rate.total, delimiter: '.', precision: 0)
+        %td.text-right= price(rate.bonus)
+        %td.text-right= price(rate.fosyga)
+        %td.text-right= price(Rate::RUNT_RATE)
+        %td.text-right= price(rate.total)

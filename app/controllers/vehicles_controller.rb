@@ -2,14 +2,12 @@ class VehiclesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_values, only: [:search]
 
-  def new
-  end
-
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user_id = current_user.id
     @vehicle.subcategory = Vehicle::SUBCATEGORIES_HASH[@vehicle.category][@vehicle.subcategory.to_i]
     if @vehicle.save
+      @rate = @vehicle.rate
       flash[:success] = "Vehiculo registrado"
     else
       flash[:danger] = "No se pudo registrar"
@@ -37,6 +35,7 @@ class VehiclesController < ApplicationController
     query = query.where(user_id: current_user.id) unless current_user.admin?
     @vehicle = query.includes(:insurances).first
     authorize @vehicle unless @vehicle.nil?
+    @rate = @vehicle.rate
     respond_to do |format|
       format.js
       format.html

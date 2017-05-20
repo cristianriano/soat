@@ -1,10 +1,14 @@
 // Insurance form
 $('#insurance_vehicle_id').val("<%= @vehicle.id %>");
+$('#insurance_license_label').html("<%= @vehicle.license %>");
+$('#insurance_fosyga_label').html("<%= price(@rate.fosyga) %>");
+$('#insurance_bonus_label').html("<%= price(@rate.bonus) %>");
+$('#insurance_total_label').html("<%= price(@rate.total) %>");
 $('#new_insurance_submit').prop('disabled', false);
 found_message = $('#insurance_state_message');
 insurance_message = $('#insurance_end_message');
-found_message.show();
-insurance_message.show();
+insurance_section = $('#insurance_section');
+insurance_section.show();
 
 <% if @vehicle.insurances.any? %>
   <% insurance = @vehicle.insurances.first %>

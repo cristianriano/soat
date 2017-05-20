@@ -3,8 +3,7 @@
   $('#new_vehicle input').each(function(index){
     $(this).prop('disabled', false);
   });
-  $('#insurance_state_message').hide();
-  $('#insurance_end_message').hide();
+  $('#insurance_section').hide();
   $('#new_insurance_submit').prop('disabled', true);
 <% else %>
   $('#alerts').html("<div class='alert alert-success' role='alert' style='margin-top: 30px'><%= I18n.t('vehicles.search.found') %></div>");

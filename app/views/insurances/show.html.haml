@@ -16,11 +16,11 @@
     %p= @vehicle.value
     %h2.page-header.page-subheader Tarifa
     %b Valor Prima
-    %p= number_to_currency(@rate.bonus, delimiter: '.', precision: 0)
+    %p= price(@rate.bonus
     %b Contribucion Fosyga (50%)
-    %p= number_to_currency(@rate.fosyga, delimiter: '.', precision: 0)
+    %p= price(@rate.fosyga
     %b Tasa Runt
-    %p= number_to_currency(Rate::RUNT_RATE, delimiter: '.', precision: 0)
-    %h4= "TOTAL: #{number_to_currency(@rate.total, delimiter: '.', precision: 0)}"
+    %p= price(Rate::RUNT_RATE
+    %h4= "TOTAL: #{price(@rate.total)}"
     %h2.page-header.page-subheader Cubrimiento
     = render Coverage.instance

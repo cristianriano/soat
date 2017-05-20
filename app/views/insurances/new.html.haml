@@ -11,10 +11,10 @@
       #new_vehicle_form_container
         = render partial: "vehicles/new_form"
 
-    #insurance_section
+    #insurance_section{style: "display: none"}
       %h3= t('insurances.new.subheader')
-      %p#insurance_state_message{style: "display: none"}
-      = simple_form_for(@insurance, url: insurances_path, html: { method: :post }) do |f|
-        = f.input :vehicle_id, as: :hidden
-        = f.button :submit, t('insurances.new.submit'), class: "btn btn-primary", disabled: true, id: 'new_insurance_submit'
-        %b#insurance_end_message{style: "display: none"}
+      %p#insurance_state_message
+      %input{type: 'button', value: t('insurances.new.continue'), class: "btn btn-primary", data: {toggle: 'modal', target: '#purchase_summary'}}
+      %b#insurance_end_message
+
+= render partial: 'purchase_summary'

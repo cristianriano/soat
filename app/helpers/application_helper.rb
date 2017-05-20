@@ -8,4 +8,8 @@ module ApplicationHelper
       page_title + ' | ' + base_title
     end
   end
+
+  def price(num)
+    number_to_currency(num, delimiter: '.', precision: 0)
+  end
 end

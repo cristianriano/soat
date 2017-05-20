@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'bought'
     end
   end
-  resources :vehicles, except: [:destroy, :edit, :update] do
+  resources :vehicles, except: [:destroy, :edit, :update, :new] do
     collection do
       match 'search', via: [:get, :post]
     end

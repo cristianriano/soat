@@ -20,6 +20,8 @@ es:
       subheader: "SOAT"
       insurance_found: "El vehiculo cuenta con un seguro que vence "
       insurance_not_found: "El vehiculo no cuenta con seguro"
+      continue: "Continuar"
+      cancel: "Cancelar"
       submit: "Comprar"
       insurance_end_message: "Su seguro sera valido por un año y empezara a estar vigente desde "
     index:

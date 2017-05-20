@@ -1,0 +1,27 @@
+#purchase_summary.modal.fade{tabindex: -1, role: 'dialog'}
+  .modal-dialog{role: "document"}
+    .modal-content
+      = simple_form_for(@insurance, url: insurances_path, html: { method: :post }) do |f|
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} &times
+          %h4.modal-title Resumen de la compra
+        .modal-body
+          = f.input :vehicle_id, as: :hidden
+          %h5#insurance_license_label Placa:
+          %p A continuación se muestran los detalles de la tarifa de acuerdo al tipo de vehiculo que se registro:
+          .row
+            .col-xs-5
+              %label Prima:
+              %label Contribución Fosyga:
+              %label Tasa RUNT:
+              %b Total:
+            .col-xs-3
+              %label.text-right#insurance_bonus_label
+              %label.text-right#insurance_fosyga_label
+              %label.text-right#insurance_runt_label= price(Rate::RUNT_RATE)
+              %label.text-right#insurance_total_label
+        .modal-footer
+          %button{type: 'button', class: "btn btn-default", data: {dismiss: 'modal'}}= t('insurances.new.cancel')
+          %button#new_insurance_submit{type: 'submit', value: 'submit', form: 'new_insurance', class: "btn btn-primary"}= t('insurances.new.submit')
+          -# = f.button :submit, t('insurances.new.submit'), class: "btn btn-primary", disabled: true, id: 'new_insurance_submit'
