@@ -70,4 +70,4 @@ Para desplegar la aplicación en tu cuenta de Heroku sólo ejecuta los siguiente
 
 Por seguridad, la API cuenta con **HTTP Basic Authentication**. Las credenciales estan definidas en el archivo `.env`.
 
-La version mas actual de la API es **v1**
+La version mas actual de la API es **v1** (`/api/v1/`)
