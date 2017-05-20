@@ -22,7 +22,7 @@ FactoryGirl.define do
       admin true
     end
 
-    factory :admin_user,      traits: [:admin]
+    factory :admin,      traits: [:admin]
     factory :confirmed_user, traits: [:confirmed]
     factory :user_with_phone, traits: [:with_phone]
   end

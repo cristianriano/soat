@@ -49,7 +49,7 @@ class Vehicle < ApplicationRecord
   end
 
   def next_insurance_start
-    return DateTime.now.end_of_day if insurances.empty?
+    return DateTime.now if insurances.empty?
     insurances.first.ends_at + 1.day
   end
 
