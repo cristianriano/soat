@@ -38,6 +38,15 @@ class InsurancesController < ApplicationController
     authorize @insurance
     @vehicle = @insurance.vehicle
     @rate = @insurance.rate
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = InsurancePdf.new({insurance: @insurance, rate: @rate, vehicle: @vehicle, view: view_context})
+        send_data pdf.render, filename: "#{@vehicle.license}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
   end
 
   def bought
