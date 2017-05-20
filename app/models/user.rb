@@ -35,6 +35,7 @@ class User < ApplicationRecord
 
   # Send the confirmation instructions using Sidekiq
   def send_devise_notification(notification_type, *args)
+    super unless ENV['SIDEKIQ_MAILER'] == 'true'
     devise_mailer.send(notification_type, self, *args).deliver_later
   end
 end

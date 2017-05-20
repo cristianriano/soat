@@ -68,7 +68,7 @@ Por ejemplo: `localhost:3000/en/`
 
 ## Ejecutar las pruebas
 
-La aplicación usa `rspec`, `capybara` y el driver `poltergeist`. Para correr todas las pruebas ejecute:
+La aplicación usa `rspec`, `capybara` y el driver `poltergeist`. Para correr todas las pruebas, prepare la base de datos con el comando `bundle exec rake db:test:prepare` y ejecute:
 
         bundle exec rspec spec
 
