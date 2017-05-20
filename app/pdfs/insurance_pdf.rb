@@ -1,14 +1,15 @@
 class InsurancePdf < Prawn::Document
-  TITLE_SIZE = 30
+  TITLE_SIZE = 28
   SUBTITLE_SIZE = 18
 
   def initialize(params)
-    super(top_margin: 70)
+    super(top_margin: 60)
     @insurance = params[:insurance]
     @vehicle = params[:vehicle]
     @rate = params[:rate]
     @view = params[:view]
     title
+    validity
     rate_table
     vehicle_info
     coverage_info
@@ -16,6 +17,15 @@ class InsurancePdf < Prawn::Document
 
   def title
     text "SOAT - #{@vehicle.license}", style: :bold, size: TITLE_SIZE
+  end
+
+  def validity
+    move_down 20
+    text "Validez", size: SUBTITLE_SIZE
+    move_down 10
+    text "Comprado el #{@insurance.bought_at.strftime('%d - %b del %Y')}"
+    move_down 5
+    text "Vigente del #{@insurance.starts_at.strftime('%d/%b/%y')} al #{@insurance.ends_at.strftime('%d/%b/%y')}"
   end
 
   def rate_table

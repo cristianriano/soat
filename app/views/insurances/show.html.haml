@@ -1,9 +1,13 @@
 - provide(:title, @vehicle.license)
 
 %h1.page-header= "#{t('insurances.show.header')} \"#{@vehicle.license}\""
+%h2.page-header Detalles
 .row
-  .col-xs-12
-    %h2.page-header Detalles
+  .col-xs-10
+    %b Vigencia:
+    %p= "Del #{@insurance.starts_at.strftime('%d/%b/%y')} al #{@insurance.ends_at.strftime('%d/%b/%y')}"
+    %b Comprado:
+    %p= @insurance.bought_at.strftime('%d/%b/%y')
     %b Codigo:
     %p= @rate.code
     %b Categoria:
@@ -14,13 +18,19 @@
     %p= @vehicle.age
     %b= "#{@vehicle.value_type}:"
     %p= @vehicle.value
+  .col-xs-2
+    = link_to insurance_path(@insurance, format: 'pdf'), class: "btn btn-info", target: '_blank' do
+      %i.fa.fa-print
+      %small &nbsp Version Imprimible
+.row
+  .col-xs-12
     %h2.page-header.page-subheader Tarifa
     %b Valor Prima
-    %p= price(@rate.bonus
+    %p= price(@rate.bonus)
     %b Contribucion Fosyga (50%)
-    %p= price(@rate.fosyga
+    %p= price(@rate.fosyga)
     %b Tasa Runt
-    %p= price(Rate::RUNT_RATE
+    %p= price(Rate::RUNT_RATE)
     %h4= "TOTAL: #{price(@rate.total)}"
     %h2.page-header.page-subheader Cubrimiento
     = render Coverage.instance

@@ -3,7 +3,7 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
- *= require fontawesome
+ *= require font-awesome
  *= require forms
  *= require_tree ./static
  */

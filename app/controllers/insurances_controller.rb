@@ -21,7 +21,7 @@ class InsurancesController < ApplicationController
     @insurance.calculate_expiration
     if @insurance.save
       flash[:success] = "Felicitaciones! Ha adquirido el seguro SOAT. Ahora se encuentra protegido hasta #{@insurance.ends_at.strftime('%d %b %Y')}"
-      redirect_to root_path
+      redirect_to insurance_path(@insurance)
     else
       flash[:danger] = "No se pudo comprar. Verifica tus datos"
       render 'new'

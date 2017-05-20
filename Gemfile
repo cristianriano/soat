@@ -8,6 +8,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'coffee-rails', '~> 4.2'
 gem "devise", '~> 4.2.1'
 gem 'dotenv-rails', '~> 2.2.0'
+gem 'font-awesome-rails', '~> 4.7'
 gem "gon", '~> 6.1.0'
 gem "haml-rails", '~> 0.9.0'
 gem 'jbuilder', '~> 2.5'
@@ -30,7 +31,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '~> 3.1.0'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-fontawesome'
   gem 'rails-assets-jquery'
   gem 'rails-assets-jquery-ujs'
 end
