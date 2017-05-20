@@ -53,6 +53,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.8'
   gem "faker", '~> 1.7.3'
   gem 'poltergeist', '~> 1.15'
+  gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails', '~> 3.5'
-  gem 'simplecov', '~> 0.14'
+  # gem 'simplecov', '~> 0.14'
 end

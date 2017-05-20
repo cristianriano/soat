@@ -230,7 +230,7 @@ if Rate.count.zero?
   Rate.create!(
     code: "532",
     category: "AUTOS FAMILIARES",
-    subcategory: "Menos de 1500 cc",
+    subcategory: "Más de 2500 cc",
     min_age: 10,
     max_age: 99,
     bonus: 311000,

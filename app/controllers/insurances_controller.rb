@@ -1,6 +1,6 @@
 class InsurancesController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :load_gon, only: [:new]
+  before_action :authenticate_user!
+  before_action :load_gon, only: [:new]
 
   def new
     @active = 'buy'

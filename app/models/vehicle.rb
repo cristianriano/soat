@@ -33,7 +33,7 @@ class Vehicle < ApplicationRecord
   # Un comment format validator if only colombian licenses
   validates :license, presence: true#, format: {with: /[A-Z]{1,3}\d{3,4}/}, length: { minimum: 5, maximum: 6}
   validates :category, presence: true, inclusion: { in: CATEGORIES }
-  validates :subcategory, presence: true, inclusion: { in: SUBCATEGORIES }
+  validates :subcategory, presence: false, inclusion: { in: SUBCATEGORIES }
   validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :value_type, presence: false, inclusion: { in: VALUE_TYPES }
   validates :value, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

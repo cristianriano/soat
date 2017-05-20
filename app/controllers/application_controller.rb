@@ -23,16 +23,16 @@ class ApplicationController < ActionController::Base
 
   def record_in_use
     flash[:danger] = "Los datos estan en uso"
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   def record_not_found
     flash[:danger] = "Lo sentimos. No se encontro la información que estas buscando"
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   def not_authorized
     flash[:danger] = "No cuentas con los permisos suficientes"
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 end

@@ -16,6 +16,6 @@ set_options_for_select = function(select_id, options){
   element = $('#'+select_id);
   element.empty();
   $.each(options, function(index){
-    element.append('<option value="'+index+'">'+options[index]+'</option>');
+    element.append('<option value="'+options[index]+'">'+options[index]+'</option>');
   });
 }

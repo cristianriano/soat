@@ -4,15 +4,15 @@ def zeus_running?
   File.exist? '.zeus.sock'
 end
 
-unless zeus_running?
-  puts "Starting simplecov..."
-  require 'simplecov'
-  SimpleCov.start 'rails' do
-    add_filter '/config/'
-    add_filter '/db/'
-    add_filter '/vendor/bundle/'
-  end
-end
+# unless zeus_running?
+#   puts "Starting simplecov..."
+#   require 'simplecov'
+#   SimpleCov.start 'rails' do
+#     add_filter '/config/'
+#     add_filter '/db/'
+#     add_filter '/vendor/bundle/'
+#   end
+# end
 
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
@@ -70,8 +70,8 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   # Include devise test helpers in controller specs
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 
   # Factory Girl methods
   config.include FactoryGirl::Syntax::Methods
@@ -98,13 +98,9 @@ RSpec.configure do |config|
     # For feature specs using a Capybara driver for an external JavaScript-capable browser (almost all drivers)
     # like PhantomJS, the app under test and the specs do not share a database connection.
     # So do not use transaction
-    if example.metadata[:js]
-      config.use_transactional_fixtures = false
-      DatabaseCleaner.strategy = :truncation, { except: static_info_tables }
-    else
-      config.use_transactional_fixtures = true
-      DatabaseCleaner.strategy = :transaction
-    end
+    config.use_transactional_fixtures = false
+    DatabaseCleaner.strategy = :truncation, { except: static_info_tables }
+
     DatabaseCleaner.clean
     DatabaseCleaner.start
     Sidekiq::Worker.clear_all

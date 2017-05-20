@@ -1,11 +1,10 @@
 class VehiclesController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :load_values, only: [:search]
+  before_action :authenticate_user!
+  before_action :load_values, only: [:search]
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user_id = current_user.id
-    @vehicle.subcategory = Vehicle::SUBCATEGORIES_HASH[@vehicle.category][@vehicle.subcategory.to_i]
     if @vehicle.save
       @rate = @vehicle.rate
       flash[:success] = "Vehiculo registrado"
