@@ -20,7 +20,7 @@ class InsurancesController < ApplicationController
     # Set times
     @insurance.calculate_expiration
     if @insurance.save
-      UsersMailer.purchase_summary(current_user, @insurance).deliver_now
+      UsersMailer.purchase_summary(current_user, @insurance).deliver_later
       flash[:success] = "Felicitaciones! Ha adquirido el seguro SOAT. Ahora se encuentra protegido hasta #{@insurance.ends_at.strftime('%d %b %Y')}"
       redirect_to insurance_path(@insurance)
     else
