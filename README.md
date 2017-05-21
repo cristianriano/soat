@@ -37,17 +37,21 @@ Para correr la aplicación local (development)
         gem install zeus
         zeus start
 
-6. Arrancar la aplicación
+6. Si se configura Sidekiq para enviar los correos en segundo plano con la variable de entorno `SIDEKIQ_MAILER=true` se debera arrancar Sidekiq con el comando.
+
+        sidekiq
+
+7. Arrancar la aplicación
 
         rails server
         zeus server # Si instalo Zeus
 
-7. Finalmente visitar en el navegador
+8. Finalmente visitar en el navegador
 
         localhost:3000 # Aplicación web
         localhost:1080 # Servidor de correos (Mailcatcher)
 
-8. Puedes iniciar sesion con el admin que viene por defecto en las `seeds` (Actualmente no se ha implementado la creación de administradores a traves de la app web).
+9. Puedes iniciar sesion con el admin que viene por defecto en las `seeds` (Actualmente no se ha implementado la creación de administradores a traves de la app web).
 
         email: admin@email.com
         password: password
@@ -79,3 +83,4 @@ Para desplegar la aplicación en tu cuenta de Heroku sólo ejecuta los siguiente
 1. `heroku login`
 2. `heroku create`
 3. `git push heroku master`
+4. Por ultimo configura las variables de entorno definidas en **.env.example** con `heroku config:set VARIABLE=VALOR`
