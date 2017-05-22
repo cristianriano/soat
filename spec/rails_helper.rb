@@ -46,6 +46,9 @@ ActiveRecord::Migration.maintain_test_schema!
 # Sidekiq in testing mode fake (pushe jobs to an array)
 Sidekiq::Testing.fake!
 
+# To avoid show UTF-8 warning
+Prawn::Font::AFM.hide_m17n_warning = true
+
 #
 # Configure Capybara
 #
@@ -62,9 +65,9 @@ end
 #   Capybara::Poltergeist::Driver.new(app, :inspector => true)
 # end
 
+Capybara.default_max_wait_time = 5
 Capybara.javascript_driver = :poltergeist
 # Capybara.javascript_driver = :poltergeist_debug
-
 
 #
 # Configure RSpec
