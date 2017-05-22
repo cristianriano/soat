@@ -15,6 +15,7 @@ Para correr la aplicación local (development)
 * PostgreSQL 9.6
 * PhantomJS 2.1.1
 * [Mailcatcher](https://mailcatcher.me/)
+* Redis 3.2
 
 ### Configuración
 
