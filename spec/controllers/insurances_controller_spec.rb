@@ -26,6 +26,7 @@ RSpec.describe InsurancesController do
       insurance = Insurance.where(insurance_params).first
       expect(insurance).not_to be_nil
       expect(response).to redirect_to(insurance_path(insurance))
+      expect(Sidekiq::Worker.jobs).not_to be_empty
     end
 
     it "should start insurance validity today" do
