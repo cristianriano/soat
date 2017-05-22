@@ -43,6 +43,9 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+# Sidekiq in testing mode fake (pushe jobs to an array)
+Sidekiq::Testing.fake!
+
 #
 # Configure Capybara
 #
@@ -72,6 +75,8 @@ RSpec.configure do |config|
   # Include devise test helpers in controller specs
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
+  # Include login_as and logout helper
+  config.include Warden::Test::Helpers
 
   # Factory Girl methods
   config.include FactoryGirl::Syntax::Methods
@@ -92,6 +97,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
     Sidekiq::Worker.clear_all
     Rails.application.load_seed # Load seed for static tables
+    Warden.test_mode!
   end
 
   config.before(:each) do
