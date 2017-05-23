@@ -17,6 +17,7 @@ end
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+require "capybara/rails"
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl'
@@ -55,16 +56,22 @@ Prawn::Font::AFM.hide_m17n_warning = true
 Capybara.default_host = 'http://127.0.0.1'
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: true, timeout: 30, window_size: [1366, 768])
+  options = {
+    js_errors: true,
+    timeout: 30,
+    window_size: [1366, 768]
+  }
+  Capybara::Poltergeist::Driver.new(app, options)
 end
 
 # Use this dirver for debugging js
 # Insert `page.driver.debug` into your tests to pause the test and launch a browser which gives you the WebKit inspector
 # to view your test run with.
 # Capybara.register_driver :poltergeist_debug do |app|
-#   Capybara::Poltergeist::Driver.new(app, :inspector => true)
+#   Capybara::Poltergeist::Driver.new(app, inspector: true, debug: true)
 # end
 
+Capybara.always_include_port = true
 Capybara.default_max_wait_time = 5
 Capybara.javascript_driver = :poltergeist
 # Capybara.javascript_driver = :poltergeist_debug
@@ -90,7 +97,10 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  # For feature specs using a Capybara driver for an external JavaScript-capable browser (almost all drivers)
+  # like PhantomJS, the app under test and the specs do not share a database connection.
+  # So do not use transaction
+  config.use_transactional_fixtures = false
 
   # DatabaseCleaner config
   static_info_tables = %w(rates coverages)
@@ -104,10 +114,6 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    # For feature specs using a Capybara driver for an external JavaScript-capable browser (almost all drivers)
-    # like PhantomJS, the app under test and the specs do not share a database connection.
-    # So do not use transaction
-    config.use_transactional_fixtures = false
     DatabaseCleaner.strategy = :truncation, { except: static_info_tables }
 
     DatabaseCleaner.clean
@@ -134,4 +140,5 @@ RSpec.configure do |config|
   # config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include WaitForAjax, type: :feature
 end

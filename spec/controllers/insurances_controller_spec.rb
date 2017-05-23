@@ -32,7 +32,7 @@ RSpec.describe InsurancesController do
     it "should start insurance validity today" do
       post :create, params: {insurance: insurance_params}
       insurance = Insurance.where(insurance_params).first
-      expect(insurance.starts_at.to_date).to eq Date.today
+      expect(insurance.starts_at.to_s).to eq DateTime.now.utc.to_s
     end
 
     it "should start insurance when last one expires" do
