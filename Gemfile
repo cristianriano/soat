@@ -26,7 +26,7 @@ gem 'routing-filter', '~> 0.6'
 gem 'sass-rails', '~> 5.0'
 # gem 'searchkick'
 gem 'sidekiq', '~> 5.0'
-gem 'simple_form', '~> 3.4.0'
+gem 'simple_form', '~> 5.0.2'
 gem "therubyracer", platforms: :ruby
 gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails', '~> 4.0'
